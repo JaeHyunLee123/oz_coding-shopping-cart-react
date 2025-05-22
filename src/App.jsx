@@ -6,7 +6,8 @@ import Cart from './components/Cart';
 /** @typedef {import('./types').Product} Product */
 
 const App = () => {
-    const [cart, setCart] = useState([]);
+    /** @type {[Product[], React.Dispatch<React.SetStateAction<Product[]>>]} */
+    const [cart, setCart] = useState(/** @type {Product[]} */ ([]));
 
     /**
      * Adds a product to the cart, enforcing a max limit of 8 items.
@@ -17,6 +18,11 @@ const App = () => {
         // 상품은 배열객체로 이루어져 있습니다.
         // 카트에 상품이 8개 이상이면 alert를 띄워
         // 더 이상 상품을 추가할 수 없다고 알려주세요.
+        if (cart.length > 7) {
+            alert('더 이상 상품을 추가할 수 없습니다.');
+        } else {
+            setCart([...cart, product]);
+        }
     };
 
     return (
