@@ -1,5 +1,18 @@
+//@ts-check
+
 import React, { useState } from 'react';
 
+/**
+ * @typedef {import("../types").Product} Product
+ */
+
+/**
+ * @typedef {Object} CartProps
+ * @property {Function} setCart
+ * @property {Array<Product>} cart
+ */
+
+/** @param {CartProps} props */
 const Cart = ({ cart, setCart }) => {
     const [isOpen, setIsOpen] = useState(true);
 

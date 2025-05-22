@@ -1,10 +1,17 @@
+// @ts-check
 import React, { useState } from 'react';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 
+/** @typedef {import('./types').Product} Product */
+
 const App = () => {
     const [cart, setCart] = useState([]);
 
+    /**
+     * Adds a product to the cart, enforcing a max limit of 8 items.
+     * @param {Product} product
+     */
     const addToCart = (product) => {
         // TODO: 카트에 상품을 추가하는 함수를 완성하세요.
         // 상품은 배열객체로 이루어져 있습니다.

@@ -1,9 +1,18 @@
+//@ts-check
+
 import React from 'react';
 import ProductCard from './ProductCard';
+
+/**
+ * @typedef {import("../types").Product} Product
+ */
 
 //TODO: 상품 목록을 저장하는 products 배열을 완성하세요.
 //이미지 데이터는 public 폴더내에 파일을 사용하세요.
 
+/**
+ * @type {Array<Product>}
+ */
 const products = [
     { id: 1, name: '무선 블루투스 이어폰', price: 59000, img: '/sample.png' },
     { id: 2, name: '게이밍 키보드', price: 79000, img: '/sample.png' },
@@ -22,6 +31,12 @@ const products = [
 //TODO: ProductList 컴포넌트를 완성하세요.
 //ProductCard 컴포넌트를 사용하여 각 상품을 렌더링하세요.
 //ProductCard 컴포넌트를 확인하여 props를 전달하세요.
+/**
+ * @typedef {Object} ProductListProps
+ * @property {(product: Product) => void} addToCart
+ */
+
+/** @param {ProductListProps} props */
 const ProductList = ({ addToCart }) => {
     return <div className="product-list"></div>;
 };

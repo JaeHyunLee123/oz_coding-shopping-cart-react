@@ -1,5 +1,18 @@
+//@ts-check
+
 import React from 'react';
 
+/**
+ * @typedef {import("../types").Product} Product
+ */
+
+/**
+ * @typedef {Object} ProductCardProps
+ * @property {(product: Product) => void} addToCart
+ * @property {Product} product
+ */
+
+/** @param {ProductCardProps} props */
 const ProductCard = ({ product, addToCart }) => {
     return (
         <div className="product-card">
